@@ -1,11 +1,10 @@
 ﻿namespace N7.Drand;
 
-public class DrandOptions
+public sealed class DrandOptions
 {
-    public List<Uri> Providers { get; set; } = new();
-    public ChainInfo ChainInfo { get; set; } = new(
-        PublicKey   : String.Empty,
-        Period      : default,
-        GenesisTime : default,
-        Hash        : String.Empty);
+    public List<String> Providers   { get; set; } = new();
+    public String       PublicKey   { get; set; } = default!;
+    public UInt64       Period      { get; set; } = default;
+    public UInt64       GenesisTime { get; set; } = default;
+    public String       Hash        { get; set; } = default!;
 }
